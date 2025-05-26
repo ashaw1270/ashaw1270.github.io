@@ -125,7 +125,7 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Eleventy', 'Node.js', 'WordPress'];
+  const skills = ['Python', 'PyTorch', 'Scikit-learn', 'Pandas', 'NumPy', 'C++'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -135,10 +135,17 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Brittany and I enjoy creating things that live on the internet. My
-              interest in web development started back in 2012 when I decided to try editing custom
-              Tumblr themes — turns out hacking together a custom reblog button taught me a lot
-              about HTML &amp; CSS!
+              Hello! My name is Adam and I'm fascinated by the math that powers machine learning. My
+              interest in machine learning began with the release of GPT-4 in the spring of my
+              senior year of high school. I was amazed that a program was capable of so many things,
+              but more than anything, I was in awe of the fact that{' '}
+              <em>
+                <strong>someone created this</strong>
+              </em>
+              . That curiosity quickly turned into a deeper interest in the theory behind these
+              models—how they generalize, why they work, and what their limitations are. These days,
+              I spend most of my time exploring the mathematical side of machine learning,
+              especially concepts such as VC theory and risk minimization.
             </p>
 
             <p>
