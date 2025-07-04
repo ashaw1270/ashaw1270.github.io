@@ -125,8 +125,6 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['Python', 'PyTorch', 'Scikit-learn', 'Pandas', 'NumPy', 'C++'];
-
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
       <h2 className="numbered-heading">About Me</h2>
@@ -144,43 +142,41 @@ const About = () => {
               </em>
               . That curiosity quickly turned into a deeper interest in the theory behind these
               models—how they generalize, why they work, and what their limitations are. These days,
-              I spend most of my time exploring the mathematical side of machine learning,
-              especially concepts such as VC theory and risk minimization.
+              I spend my time exploring the mathematical side of machine learning, especially
+              concepts such as VC theory, risk minimization, and more recently, topological data
+              analysis.
             </p>
 
             <p>
-              Fast-forward to today, and I’ve had the privilege of working at{' '}
-              <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}
-              <a href="https://starry.com/">a start-up</a>,{' '}
-              <a href="https://www.apple.com/">a huge corporation</a>, and{' '}
-              <a href="https://scout.camd.northeastern.edu/">a student-led design studio</a>. My
-              main focus these days is building accessible, inclusive products and digital
-              experiences at <a href="https://upstatement.com/">Upstatement</a> for a variety of
-              clients.
+              I'm currently an Associate Software Developer Intern at Google on the Workspace AI
+              Platform team, which integrates Gemini into products such as Google Docs, Slides, and
+              Gmail. As part of my role, I am streamlining the creation of custom Gems (personalized
+              versions of Gemini) for internal use and sharing with teams. I am also developing a
+              flexible access control system, allowing creators to specify user access to these
+              Gems. Navigating the largest monorepo in the world has been an invaluable experience,
+              giving me deep exposure to large-scale C++ development and complex system integration.
             </p>
 
             <p>
-              I also recently{' '}
-              <a href="https://www.newline.co/courses/build-a-spotify-connected-app">
-                launched a course
+              This upcoming fall, I will be conducting research with Professor{' '}
+              <a href="https://scholar.google.com/citations?user=9Vc6Dn0AAAAJ">Alvin Jin</a> at USC
+              in the field of topological deep learning. We are investigating the way the topology
+              of data changes as it passes through successive layers of a deep neural network. We
+              are using the paper{' '}
+              <a href="https://jmlr.csail.mit.edu/papers/volume21/20-345/20-345.pdf">
+                Topology of Deep Neural Networks
               </a>{' '}
-              that covers everything you need to build a web app with the Spotify API using Node
-              &amp; React.
+              (Naitzat et al.) as motivation, and plan on extending their work to classification of
+              multiple classes.
             </p>
-
-            <p>Here are a few technologies I’ve been working with recently:</p>
           </div>
-
-          <ul className="skills-list">
-            {skills && skills.map((skill, i) => <li key={i}>{skill}</li>)}
-          </ul>
         </StyledText>
 
         <StyledPic>
           <div className="wrapper">
             <StaticImage
               className="img"
-              src="../../images/me.jpg"
+              src="../../images/me.png"
               width={500}
               quality={95}
               formats={['AUTO', 'WEBP', 'AVIF']}
