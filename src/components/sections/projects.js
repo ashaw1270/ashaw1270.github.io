@@ -9,7 +9,7 @@ import { usePrefersReducedMotion } from '@hooks';
 const StyledProjectsSection = styled.section`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
 
   h2 {
     font-size: clamp(24px, 5vw, var(--fz-heading));
@@ -25,18 +25,32 @@ const StyledProjectsSection = styled.section`
 
   .projects-grid {
     ${({ theme }) => theme.mixins.resetList};
+    width: 100%;
     position: relative;
     margin-top: 50px;
   }
 
-  .more-button {
-    ${({ theme }) => theme.mixins.button};
-    margin: 80px auto 0;
+  .project-links {
+    display: flex;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    gap: 0.5rem;
+
+    a.button {
+      ${({ theme }) => theme.mixins.button};
+      flex: 1;
+      text-align: center;
+      &:first-child {
+        margin-right: 0.75rem;
+      }
+    }
   }
 `;
 
 const StyledProject = styled.li`
   position: relative;
+  width: 100%;
   cursor: default;
   transition: var(--transition);
 
@@ -60,6 +74,7 @@ const StyledProject = styled.li`
     flex-direction: column;
     align-items: flex-start;
     position: relative;
+    width: 100%;
     height: 100%;
     padding: 2rem 1.75rem;
     border-radius: var(--border-radius);
@@ -133,7 +148,8 @@ const Projects = () => {
           node {
             frontmatter {
               title
-              external
+              paper
+              code
             }
             html
           }
@@ -162,16 +178,22 @@ const Projects = () => {
 
   const projectInner = node => {
     const { frontmatter, html } = node;
-    const { external, title } = frontmatter;
+    const { paper, code, title } = frontmatter;
 
     return (
       <div className="project-inner">
         <header>
-          <h3 className="project-title">
-            <a href={external} target="_blank" rel="noreferrer">
-              {title}
+          <h3 className="project-title">{title}</h3>
+
+          <div className="project-links">
+            <a className="button" href={paper} target="_blank" rel="noreferrer">
+              Paper
             </a>
-          </h3>
+
+            <a className="button" href={code} target="_blank" rel="noreferrer">
+              Code
+            </a>
+          </div>
 
           <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
         </header>

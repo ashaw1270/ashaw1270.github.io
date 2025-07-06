@@ -1,7 +1,8 @@
 ---
 date: '2025-05-07'
 title: 'When Less is More: Evaluating Simplicity vs. Complexity in House Price Prediction'
-external: 'https://github.com/ashaw1270/housing-prices/blob/master/House%20Prices%20Paper.pdf'
+paper: 'https://github.com/ashaw1270/housing-prices/blob/master/House%20Prices%20Paper.pdf'
+code: 'https://google.com'
 showInProjects: true
 ---
 
