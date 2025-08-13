@@ -3,7 +3,7 @@ date: '2025-8-8'
 title: 'Associate Software Developer Intern'
 company: 'Google'
 location: 'New York, NY'
-range: 'May 2025 - August 2025'
+range: 'May - August 2025'
 url: 'https://workspace.google.com/lp/solutions/ai/'
 ---
 
