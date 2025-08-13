@@ -148,26 +148,30 @@ const About = () => {
             </p>
 
             <p>
-              I'm currently an Associate Software Developer Intern at Google on the Workspace AI
-              Platform team, which integrates Gemini into products such as Google Docs, Slides, and
-              Gmail. As part of my role, I am streamlining the creation of custom Gems (personalized
-              versions of Gemini) for internal use and sharing with teams. I am also developing a
-              flexible access control system, allowing creators to specify user access to these
-              Gems. Navigating the largest monorepo in the world has been an invaluable experience,
-              giving me deep exposure to large-scale C++ development and complex system integration.
+              I just wrapped up my time as an Associate Software Developer Intern at Google on the
+              Workspace AI Platform team, which integrates Gemini into products such as Google Docs,
+              Slides, and Gmail. As part of my role, I streamlined the creation of custom Gems
+              (personalized versions of Gemini) for internal use and sharing with teams. I also
+              developed a flexible access control system, allowing creators to specify user access
+              to these Gems. Navigating the largest monorepo in the world was an invaluable
+              experience, giving me deep exposure to large-scale C++ development and complex system
+              integration.
             </p>
 
             <p>
-              This upcoming fall, I will be conducting research with Professor{' '}
+              This fall, I am conducting research with Professor{' '}
               <a href="https://scholar.google.com/citations?user=9Vc6Dn0AAAAJ">Alvin Jin</a> at USC
               in the field of topological deep learning. We are investigating the way the topology
-              of data changes as it passes through successive layers of a deep neural network. We
-              are using the paper{' '}
+              of data (i.e., Betti numbers and other invariants) changes as it passes through
+              successive layers of a deep neural network. We are using{' '}
               <a href="https://jmlr.csail.mit.edu/papers/volume21/20-345/20-345.pdf">
-                Topology of Deep Neural Networks
+                Naitzat et al.
               </a>{' '}
-              (Naitzat et al.) as motivation, and plan on extending their work to classification of
-              multiple classes.
+              as motivation, and plan on extending their work to{' '}
+              <a href="https://www.ijcai.org/proceedings/2022/0774.pdf">
+                predictive coding networks
+              </a>
+              , a novel model architecture that uses an alternative to backpropagation.
             </p>
           </div>
         </StyledText>

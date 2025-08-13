@@ -67,9 +67,9 @@ const Hero = () => {
       <p>
         I'm a rising junior at USC studying Applied Math with a minor in Computer Science. I'm an
         aspiring machine learning engineer with interests in statistical learning theory and the
-        mathematical foundations that make modern ML work. I'm currently an Associate Software
-        Developer Intern at Google, where I'm working on integrating Gemini into Workspace products
-        (Docs, Sheets, etc.).
+        mathematical foundations that make modern ML work. I just wrapped up my time as an Associate
+        Software Developer Intern at Google, where I worked on integrating Gemini into Workspace
+        products (Docs, Sheets, etc.).
       </p>
     </>
   );
