@@ -65,11 +65,12 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I'm a rising junior at USC studying Applied Math with a minor in Computer Science. I'm an
-        aspiring machine learning engineer with interests in statistical learning theory and the
-        mathematical foundations that make modern ML work. I just wrapped up my time as an Associate
-        Software Developer Intern at Google, where I worked on integrating Gemini into Workspace
-        products (Docs, Sheets, etc.).
+        I'm a rising junior at USC studying Applied Mathematics with a Computer Science minor,
+        concurrently pursuing a master's degree in Statistics. As an aspiring machine learning
+        researcher, my interests lie primarily in statistical learning theory and the mathematical
+        foundations that make modern ML work. I just wrapped up my time as an Associate Software
+        Developer Intern at Google, where I worked on integrating Gemini into Workspace products
+        (Docs, Sheets, etc.).
       </p>
     </>
   );
