@@ -65,17 +65,24 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I'm a rising junior at USC studying Applied Mathematics with a Computer Science minor,
-        concurrently pursuing a master's degree in Statistics. As an aspiring machine learning
-        researcher, my interests lie primarily in statistical learning theory and the mathematical
-        foundations that make modern ML work. I just wrapped up my time as an Associate Software
-        Developer Intern at Google, where I worked on integrating Gemini into Workspace products
-        (Docs, Sheets, etc.).
+        I'm a rising junior at USC studying Applied Math and CS, concurrently pursuing a master's
+        degree in Statistics. I am passionate about machine learning research and I hope to attend a
+        PhD program to dive deeper into the field.
+      </p>
+      <p>
+        I just wrapped up my time as an Associate Software Developer Intern at{' '}
+        <a href="https://workspace.google.com/lp/solutions/ai/">Google</a>, where I worked on
+        integrating Gemini into Workspace products (Docs, Sheets, etc.).
       </p>
     </>
   );
+  const five = (
+    <a className="email-link" href="/resume.pdf" target="_blank" rel="noreferrer">
+      Check out my resume!
+    </a>
+  );
 
-  const items = [one, two, /*three,*/ four];
+  const items = [one, two, /*three,*/ four, five];
 
   return (
     <StyledHeroSection>
