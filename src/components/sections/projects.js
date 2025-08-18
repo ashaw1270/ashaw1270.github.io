@@ -27,7 +27,38 @@ const StyledProjectsSection = styled.section`
     ${({ theme }) => theme.mixins.resetList};
     width: 100%;
     position: relative;
-    margin-top: 50px;
+    margin-top: 20px;
+    display: grid;
+    grid-gap: 25px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
+    }
+  }
+
+  .projects-grid.single-paper {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (max-width: 768px) {
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .projects-grid.multiple-papers {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
   .project-links {
@@ -76,17 +107,20 @@ const StyledProject = styled.li`
     position: relative;
     width: 100%;
     height: 100%;
-    padding: 2rem 1.75rem;
+    padding: 2.5rem 2rem;
     border-radius: var(--border-radius);
     background-color: var(--light-navy);
     transition: var(--transition);
     overflow: auto;
+    border: 1px solid var(--lightest-navy);
   }
 
   .project-title {
-    margin: 0 0 10px;
+    margin: 0 0 15px;
     color: var(--lightest-slate);
     font-size: var(--fz-xxl);
+    line-height: 1.3;
+    font-weight: 600;
 
     a {
       position: static;
@@ -104,9 +138,25 @@ const StyledProject = styled.li`
     }
   }
 
+  .project-authors {
+    margin-bottom: 20px;
+    color: var(--green);
+    font-family: var(--font-mono);
+    font-size: var(--fz-sm);
+    font-weight: 400;
+    line-height: 1.4;
+
+    .author-label {
+      color: var(--slate);
+      margin-right: 8px;
+    }
+  }
+
   .project-description {
     color: var(--light-slate);
     font-size: 17px;
+    line-height: 1.5;
+    flex-grow: 1;
 
     a {
       ${({ theme }) => theme.mixins.inlineLink};
@@ -148,8 +198,10 @@ const Projects = () => {
           node {
             frontmatter {
               title
+              authors
               paper
               code
+              date
             }
             html
           }
@@ -175,10 +227,11 @@ const Projects = () => {
 
   const GRID_LIMIT = 6;
   const projects = data.projects.edges.filter(({ node }) => node);
+  const gridClass = projects.length === 1 ? 'single-paper' : 'multiple-papers';
 
   const projectInner = node => {
     const { frontmatter, html } = node;
-    const { paper, code, title } = frontmatter;
+    const { paper, code, title, authors } = frontmatter;
 
     return (
       <div className="project-inner">
@@ -195,6 +248,13 @@ const Projects = () => {
             </a>
           </div>
 
+          {authors && (
+            <div className="project-authors">
+              <span className="author-label">Authors:</span>
+              {authors}
+            </div>
+          )}
+
           <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
         </header>
       </div>
@@ -207,7 +267,7 @@ const Projects = () => {
         Papers
       </h2>
 
-      <ul className="projects-grid">
+      <ul className={`projects-grid ${gridClass}`}>
         {prefersReducedMotion ? (
           <>
             {projects &&
