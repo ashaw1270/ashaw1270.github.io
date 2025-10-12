@@ -153,9 +153,9 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I'm a junior at USC studying Applied Math and CS, concurrently pursuing a master's degree in
-        Statistics. I am passionate about machine learning research and I hope to attend a PhD
-        program to dive deeper into the field.
+        I'm a rising junior at USC studying Applied Math and CS, concurrently pursuing a master's
+        degree in Statistics. I am passionate about machine learning research and I hope to attend a
+        PhD program to dive deeper into the field.
       </p>
       <p>
         I just wrapped up my time as an Associate Software Developer Intern at{' '}
