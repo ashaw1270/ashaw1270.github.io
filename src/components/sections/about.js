@@ -64,18 +64,18 @@ const About = () => {
             </em>
             . That curiosity quickly turned into a deeper interest in the theory behind these
             models—how they generalize, why they work, and what their limitations are. These days, I
-            spend my time exploring the mathematical side of machine learning, especially concepts
-            such as VC theory, risk minimization, and more recently, topological data analysis.
+            spend my time exploring the mathematical side of machine learning, most recently the
+            field of topological deep learning.
           </p>
 
           <p>
             I just wrapped up my time as an Associate Software Developer Intern at Google on the
             Workspace AI Platform team, which integrates Gemini into products such as Google Docs,
-            Slides, and Gmail. As part of my role, I streamlined the creation of custom Gems
-            (personalized versions of Gemini) for internal use and sharing with teams. I also
-            developed a flexible access control system, allowing creators to specify user access to
-            these Gems. Navigating the largest monorepo in the world was an invaluable experience,
-            giving me deep exposure to large-scale C++ development and complex system integration.
+            Slides, and Gmail. As part of my role, I designed and built an access control system for
+            custom Gems (personalized Gemini instances) and streamlined the creation and secure
+            sharing of these Gems across Google Workspace teams. Navigating the largest monorepo in
+            the world was an invaluable experience, giving me deep exposure to large-scale C++
+            development and complex system integration.
           </p>
 
           <p>
@@ -87,9 +87,9 @@ const About = () => {
             <a href="https://jmlr.csail.mit.edu/papers/volume21/20-345/20-345.pdf">
               Naitzat et al.
             </a>{' '}
-            as motivation, and plan on extending their work to{' '}
+            as motivation, and are extending their work to{' '}
             <a href="https://www.ijcai.org/proceedings/2022/0774.pdf">predictive coding networks</a>
-            , a novel model architecture that uses an alternative to backpropagation.
+            , a novel bidirectional architecture that uses an alternative to backpropagation.
           </p>
         </div>
       </StyledText>

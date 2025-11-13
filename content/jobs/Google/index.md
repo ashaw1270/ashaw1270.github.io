@@ -8,7 +8,7 @@ url: 'https://workspace.google.com/lp/solutions/ai/'
 ---
 
 - Joined the Workspace AI Platform team, which integrates Gemini into products such as Google Docs, Slides, and Gmail
-- Streamlined the creation of custom Gems (personalized versions of Gemini) for internal use and sharing with teams
-- Developed a flexible access control system, allowing creators to specify user access (individual or team-based) to these Gems
+- Designed and built an access control system for custom Gems (personalized Gemini instances), streamlining creation and secure sharing across Google Workspace teams
+- Implemented role-based permissions in C++ using Google's internal server framework, managing authorization and routing for millions of potential users
 - Navigated the largest monorepo in the world, using C++ and an internal server framework to deliver the correct Gems to users based on their client application and access permissions
 - Wrote complex but efficient unit tests to ensure the correctness and reliability of new features

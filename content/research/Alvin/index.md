@@ -7,6 +7,6 @@ range: 'August 2025 - Present'
 url: 'https://scholar.google.com/citations?user=9Vc6Dn0AAAAJ&hl=en'
 ---
 
-- Conducting directed research with Professor Alvin Jin in the field of topological deep learning
-- Investigating the way the topology of data (i.e., Betti numbers and other invariants) changes as it passes through successive layers of a deep neural network
-- Working specifically with predictive coding networks (an alternative to backpropagation), attempting to extend existing results to this novel learning framework
+- Conducting research with Professor Alvin Jin in the field of topological deep learning
+- Analyzing changes in topological invariants (Betti numbers) across network layers and their effect on inversion ability in <span style="color: #64ffda;">[predictive coding networks](https://arxiv.org/abs/2202.09467)</span>, a class of bidirectional architectures
+- Presenting findings at the <span style="color: #64ffda;">[Conference on Topological Data Analysis](https://zhengchao-wan.com/tda-conference-2025/index.html)</span> at the University of Missouri in November and preparing manuscript for submission
