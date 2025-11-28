@@ -8,4 +8,4 @@ url: 'https://dornsife.usc.edu/mathematics/undergraduate-research-faculty-profil
 ---
 
 - Worked with Professor James Alcala on the identification and classification of bias in text containing hyperbolic and sarcastic language
-- Developed a multidimensional bias classification system to quantify political/ideological bias in hyperbolic and sarcastic text
+- Researched existing bias classification systems that quantify political/ideological bias, and looked at how these could be applied to unconventional text
