@@ -89,7 +89,7 @@ const About = () => {
             </a>{' '}
             as motivation, and are extending their work to{' '}
             <a href="https://www.ijcai.org/proceedings/2022/0774.pdf">predictive coding networks</a>
-            , a novel bidirectional architecture that uses an alternative to backpropagation.
+            , a novel architecture that uses an alternative to backpropagation.
           </p>
         </div>
       </StyledText>
