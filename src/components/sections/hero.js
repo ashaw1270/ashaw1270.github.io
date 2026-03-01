@@ -169,9 +169,9 @@ const Hero = () => {
         program to dive deeper into the field.
       </p>
       <p>
-        I just wrapped up my time as an Associate Software Developer Intern at{' '}
-        <a href="https://workspace.google.com/lp/solutions/ai/">Google</a>, where I worked on
-        integrating Gemini into Workspace products (Docs, Sheets, etc.).
+        This summer, I will be conducting deep learning research at{' '}
+        <a href="https://www.anl.gov/">Argonne National Laboratory</a> through the U.S. Department
+        of Energy's SULI program.
       </p>
     </>
   );
