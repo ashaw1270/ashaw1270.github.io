@@ -68,9 +68,10 @@ const About = () => {
             field of topological deep learning.
           </p>
           <p>
-            Last summer, I worked as an Associate Software Developer Intern at Google on the
-            Workspace AI Platform team, which integrates Gemini into products such as Google Docs,
-            Slides, and Gmail. This school year, I conducted research with Professor{' '}
+            Last summer, I worked as an Associate Software Developer Intern at{' '}
+            <a href="https://workspace.google.com/lp/solutions/ai/">Google</a> on the Workspace AI
+            Platform team, which integrates Gemini into products such as Google Docs, Slides, and
+            Gmail. This school year, I conducted research with Professor{' '}
             <a href="https://scholar.google.com/citations?user=9Vc6Dn0AAAAJ">Alvin Jin</a> at USC in
             topological deep learning, investigating how the topology of data (Betti numbers)
             evolves across successive layers of a deep neural network. We submitted our findings to
