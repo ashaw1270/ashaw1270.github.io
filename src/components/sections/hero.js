@@ -164,20 +164,15 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I'm a junior at USC studying Applied Math and CS, concurrently pursuing a master's degree in
+        I'm a senior at USC studying Applied Math and CS, concurrently pursuing a master's degree in
         Statistics. I am passionate about machine learning research and I hope to attend a PhD
         program to dive deeper into the field.
-      </p>
-      <p>
-        This summer, I will be conducting deep learning research at{' '}
-        <a href="https://www.anl.gov/">Argonne National Laboratory</a> through the U.S. Department
-        of Energy's SULI program.
       </p>
     </>
   );
   const five = (
-    <a className="email-link" href="/resume.pdf" target="_blank" rel="noreferrer">
-      Check out my resume!
+    <a className="email-link" href="/cv.pdf" target="_blank" rel="noreferrer">
+      Check out my CV!
     </a>
   );
   const six = (
