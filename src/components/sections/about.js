@@ -75,9 +75,15 @@ const About = () => {
             to a workshop soon. During my junior year (2025–2026), I conducted research in
             topological deep learning with Professor Alvin Jin at USC, investigating how the
             topology of data (Betti numbers) evolves across successive layers of a deep neural
-            network. That work was accepted to the 2026 Topology, Algebra, and Geometry in Data
-            Science (TAG-DS) conference (to be published soon) and the ICML 2026 Workshop on
-            Weight-Space Symmetries (non-archival); a preprint is available{' '}
+            network. That work was accepted to the{' '}
+            <a href="https://www.tagds.com/events/tag-ds-2026">
+              2026 Topology, Algebra, and Geometry in Data Science (TAG-DS)
+            </a>{' '}
+            conference (to be published soon) and the{' '}
+            <a href="https://www.weightsymmetry.com/">
+              ICML 2026 Workshop on Weight-Space Symmetries
+            </a>{' '}
+            (non-archival); a preprint is available{' '}
             <a href="https://arxiv.org/abs/2608.02816">here</a>. In Summer 2025, I worked as an
             Associate Software Developer Intern at{' '}
             <a href="https://workspace.google.com/lp/solutions/ai/">Google</a> on the Workspace AI
