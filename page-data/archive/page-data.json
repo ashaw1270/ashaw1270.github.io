@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-pages-archive-js",
     "path": "/archive/",
-    "result": {"data":{"allMarkdownRemark":{"edges":[{"node":{"frontmatter":{"date":"2025-05-07","title":"When Less is More: Evaluating Simplicity vs. Complexity in House Price Prediction","tech":null,"github":null,"external":null,"company":null},"html":""}}]}},"pageContext":{}},
-    "staticQueryHashes": ["2031412112","2340772169","2938933778","854874300"]}
+    "result": {"data":{"allMarkdownRemark":{"edges":[{"node":{"frontmatter":{"date":"2026-08-03","title":"Topological Simplification in Predictive Coding Networks","tech":null,"github":null,"external":null,"company":null},"html":""}},{"node":{"frontmatter":{"date":"2025-05-07","title":"When Less is More: Evaluating Simplicity vs. Complexity in House Price Prediction","tech":null,"github":null,"external":null,"company":null},"html":""}}]}},"pageContext":{}},
+    "staticQueryHashes": ["1993514519","2031412112","28917604","854874300"]}
