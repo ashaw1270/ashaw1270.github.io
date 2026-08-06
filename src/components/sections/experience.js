@@ -145,6 +145,25 @@ const StyledTabPanel = styled.div`
     ${({ theme }) => theme.mixins.fancyList};
   }
 
+  a,
+  a.inline-link {
+    ${({ theme }) => theme.mixins.inlineLink};
+    display: inline;
+    white-space: normal;
+
+    &:after {
+      display: none;
+    }
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+      text-decoration-color: var(--green);
+      text-underline-offset: 0.2em;
+      text-decoration-thickness: 1px;
+    }
+  }
+
   h3 {
     margin-bottom: 2px;
     font-size: var(--fz-xxl);
@@ -168,7 +187,10 @@ const Experience = () => {
   const data = useStaticQuery(graphql`
     query {
       experience: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/content/(jobs|research)/" } }
+        filter: {
+          fileAbsolutePath: { regex: "/content/(jobs|research)/" }
+          frontmatter: { show: { ne: false } }
+        }
         sort: { fields: [frontmatter___date], order: DESC }
       ) {
         edges {
@@ -180,6 +202,7 @@ const Experience = () => {
               location
               range
               url
+              show
             }
             html
           }
@@ -291,7 +314,8 @@ const Experience = () => {
                       <span>{title}</span>
                       {isResearch ? (
                         <>
-                          &nbsp;with&nbsp;
+                          {' '}
+                          with{' '}
                           <span className="company">
                             {url ? (
                               <a href={url} className="inline-link">
@@ -303,12 +327,15 @@ const Experience = () => {
                           </span>
                         </>
                       ) : (
-                        <span className="company">
-                          &nbsp;@&nbsp;
-                          <a href={url} className="inline-link">
-                            {company}
-                          </a>
-                        </span>
+                        <>
+                          {' '}
+                          <span className="company">
+                            @{' '}
+                            <a href={url} className="inline-link">
+                              {company}
+                            </a>
+                          </span>
+                        </>
                       )}
                     </h3>
 
