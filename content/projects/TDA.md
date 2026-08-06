@@ -1,0 +1,15 @@
+---
+date: '2026-08-03'
+title: 'Topological Simplification in Predictive Coding Networks'
+authors: 'Adam Shaw, Jiayu Li, Michael Sperling, Michael Kim, Alvin Jin'
+paper: 'https://arxiv.org/abs/2608.02816'
+code: 'https://github.com/jiayuliusc/Topological-Simplification-in-Predictive-Coding-Networks'
+venues:
+  - name: 'Topology, Algebra, and Geometry in Data Science (TAG-DS) 2026'
+    url: 'https://www.tagds.com/events/tag-ds-2026'
+    notes: 'soon to be published'
+  - name: 'ICML 2026 Workshop on Weight-Space Symmetries'
+    url: 'https://www.weightsymmetry.com/'
+    notes: 'non-archival'
+showInProjects: true
+---

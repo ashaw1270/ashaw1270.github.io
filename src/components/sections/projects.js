@@ -152,6 +152,56 @@ const StyledProject = styled.li`
     }
   }
 
+  .project-venues {
+    margin-bottom: 20px;
+    color: var(--light-slate);
+    font-family: var(--font-mono);
+    font-size: var(--fz-sm);
+    font-weight: 400;
+    line-height: 1.5;
+
+    .venue-label {
+      color: var(--slate);
+      margin-right: 8px;
+    }
+
+    ul {
+      ${({ theme }) => theme.mixins.resetList};
+      margin-top: 6px;
+    }
+
+    li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 4px;
+
+      &:before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: var(--slate);
+      }
+    }
+
+    a {
+      ${({ theme }) => theme.mixins.inlineLink};
+      display: inline;
+      white-space: normal;
+
+      &:after {
+        display: none;
+      }
+
+      &:hover,
+      &:focus-visible {
+        text-decoration: underline;
+        text-decoration-color: var(--green);
+        text-underline-offset: 0.2em;
+        text-decoration-thickness: 1px;
+      }
+    }
+  }
+
   .project-description {
     color: var(--light-slate);
     font-size: 17px;
@@ -202,6 +252,11 @@ const Projects = () => {
               paper
               code
               date
+              venues {
+                name
+                url
+                notes
+              }
             }
             html
           }
@@ -231,7 +286,7 @@ const Projects = () => {
 
   const projectInner = node => {
     const { frontmatter, html } = node;
-    const { paper, code, title, authors } = frontmatter;
+    const { paper, code, title, authors, venues } = frontmatter;
 
     return (
       <div className="project-inner">
@@ -252,6 +307,42 @@ const Projects = () => {
             <div className="project-authors">
               <span className="author-label">Authors:</span>
               {authors}
+            </div>
+          )}
+
+          {venues?.length > 0 && (
+            <div className="project-venues">
+              {venues.length === 1 ? (
+                <>
+                  <span className="venue-label">Venue:</span>
+                  {venues[0].url ? (
+                    <a href={venues[0].url} target="_blank" rel="noreferrer">
+                      {venues[0].name}
+                    </a>
+                  ) : (
+                    <span>{venues[0].name}</span>
+                  )}
+                  {venues[0].notes && <span> ({venues[0].notes})</span>}
+                </>
+              ) : (
+                <>
+                  <span className="venue-label">Venues:</span>
+                  <ul>
+                    {venues.map((venue, i) => (
+                      <li key={i}>
+                        {venue.url ? (
+                          <a href={venue.url} target="_blank" rel="noreferrer">
+                            {venue.name}
+                          </a>
+                        ) : (
+                          <span>{venue.name}</span>
+                        )}
+                        {venue.notes && <span> ({venue.notes})</span>}
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
             </div>
           )}
 

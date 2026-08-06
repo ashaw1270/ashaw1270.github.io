@@ -4,5 +4,5 @@ title: 'When Less is More: Evaluating Simplicity vs. Complexity in House Price P
 authors: 'Adam Shaw, Michael Kim, Anish Kushalapa'
 paper: '/house_prices_paper.pdf'
 code: 'https://github.com/ashaw1270/housing-prices'
-showInProjects: true
+showInProjects: false
 ---
