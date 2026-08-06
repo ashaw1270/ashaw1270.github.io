@@ -24,63 +24,6 @@ const StyledExperienceSection = styled.section`
   }
 `;
 
-const StyledToggleContainer = styled.div`
-  display: flex;
-  width: 100%;
-  margin-bottom: 50px;
-
-  @media (max-width: 768px) {
-    margin-bottom: 30px;
-  }
-`;
-
-const StyledToggleButton = styled.button`
-  ${({ theme }) => theme.mixins.link};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-  padding: 12px 20px;
-  margin: 0;
-  border: 1px solid var(--green);
-  border-radius: 0;
-  background-color: ${({ isActive }) => (isActive ? 'var(--green)' : 'transparent')};
-  color: ${({ isActive }) => (isActive ? 'var(--navy)' : 'var(--green)')};
-  font-family: var(--font-mono);
-  font-size: var(--fz-xs);
-  font-weight: 500;
-  text-align: center;
-  white-space: nowrap;
-  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-
-  &:first-child {
-    border-top-left-radius: var(--border-radius);
-    border-bottom-left-radius: var(--border-radius);
-    border-right: 0.5px solid var(--green);
-  }
-
-  &:last-child {
-    border-top-right-radius: var(--border-radius);
-    border-bottom-right-radius: var(--border-radius);
-    border-left: 0.5px solid var(--green);
-  }
-
-  @media (max-width: 768px) {
-    padding: 10px 16px;
-  }
-
-  @media (max-width: 480px) {
-    padding: 8px 12px;
-    font-size: var(--fz-xxs);
-  }
-
-  &:hover,
-  &:focus {
-    background-color: ${({ isActive }) => (isActive ? 'var(--green)' : 'var(--green-tint)')};
-    color: ${({ isActive }) => (isActive ? 'var(--navy)' : 'var(--green)')};
-  }
-`;
-
 const StyledTabList = styled.div`
   position: relative;
   z-index: 3;
@@ -224,25 +167,8 @@ const StyledTabPanel = styled.div`
 const Experience = () => {
   const data = useStaticQuery(graphql`
     query {
-      jobs: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/content/jobs/" } }
-        sort: { fields: [frontmatter___date], order: DESC }
-      ) {
-        edges {
-          node {
-            frontmatter {
-              title
-              company
-              location
-              range
-              url
-            }
-            html
-          }
-        }
-      }
-      research: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/content/research/" } }
+      experience: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/content/(jobs|research)/" } }
         sort: { fields: [frontmatter___date], order: DESC }
       ) {
         edges {
@@ -262,21 +188,12 @@ const Experience = () => {
     }
   `);
 
-  const [experienceType, setExperienceType] = useState('jobs'); // 'jobs' or 'research'
+  const experienceData = data.experience.edges;
   const [activeTabId, setActiveTabId] = useState(0);
   const [tabFocus, setTabFocus] = useState(null);
   const tabs = useRef([]);
   const revealContainer = useRef(null);
   const prefersReducedMotion = usePrefersReducedMotion();
-
-  // Get current data based on experience type
-  const currentData = experienceType === 'jobs' ? data.jobs.edges : data.research.edges;
-
-  // Reset active tab when switching experience type
-  useEffect(() => {
-    setActiveTabId(0);
-    setTabFocus(null);
-  }, [experienceType]);
 
   useEffect(() => {
     if (prefersReducedMotion) {
@@ -329,29 +246,12 @@ const Experience = () => {
     <StyledExperienceSection id="experience" ref={revealContainer}>
       <h2 className="numbered-heading">Experience</h2>
 
-      <StyledToggleContainer>
-        <StyledToggleButton
-          isActive={experienceType === 'jobs'}
-          onClick={() => setExperienceType('jobs')}>
-          Work
-        </StyledToggleButton>
-        <StyledToggleButton
-          isActive={experienceType === 'research'}
-          onClick={() => setExperienceType('research')}>
-          Research
-        </StyledToggleButton>
-      </StyledToggleContainer>
-
       <div className="inner">
-        <StyledTabList
-          role="tablist"
-          aria-label={`${experienceType} tabs`}
-          onKeyDown={e => onKeyDown(e)}>
-          {currentData &&
-            currentData.map(({ node }, i) => {
-              const { company } = node.frontmatter;
-              const displayName =
-                experienceType === 'research' ? node.frontmatter.professor || company : company;
+        <StyledTabList role="tablist" aria-label="Experience tabs" onKeyDown={e => onKeyDown(e)}>
+          {experienceData &&
+            experienceData.map(({ node }, i) => {
+              const { company, professor } = node.frontmatter;
+              const displayName = professor || company;
               return (
                 <StyledTabButton
                   key={i}
@@ -371,13 +271,12 @@ const Experience = () => {
         </StyledTabList>
 
         <StyledTabPanels>
-          {currentData &&
-            currentData.map(({ node }, i) => {
+          {experienceData &&
+            experienceData.map(({ node }, i) => {
               const { frontmatter, html } = node;
-              const { title, url, company, range } = frontmatter;
-              const isResearch = experienceType === 'research';
-              const professor = frontmatter.professor;
-              const displayName = isResearch ? professor || company : company;
+              const { title, url, company, professor, range } = frontmatter;
+              const isResearch = Boolean(professor);
+              const displayName = professor || company;
 
               return (
                 <CSSTransition key={i} in={activeTabId === i} timeout={250} classNames="fade">
