@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
-Sitemap: https://ashaw1270.github.io/sitemap-index.xml
+Disallow: /d/
+Sitemap: https://ashaw1270.github.io/sitemap/sitemap-index.xml
 Host: https://ashaw1270.github.io
