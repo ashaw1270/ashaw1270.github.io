@@ -72,9 +72,6 @@ const StyledProjectsSection = styled.section`
       ${({ theme }) => theme.mixins.button};
       flex: 1;
       text-align: center;
-      &:first-child {
-        margin-right: 0.75rem;
-      }
     }
   }
 `;
@@ -294,13 +291,17 @@ const Projects = () => {
           <h3 className="project-title">{title}</h3>
 
           <div className="project-links">
-            <a className="button" href={paper} target="_blank" rel="noreferrer">
-              Paper
-            </a>
+            {paper && (
+              <a className="button" href={paper} target="_blank" rel="noreferrer">
+                Paper
+              </a>
+            )}
 
-            <a className="button" href={code} target="_blank" rel="noreferrer">
-              Code
-            </a>
+            {code && (
+              <a className="button" href={code} target="_blank" rel="noreferrer">
+                Code
+              </a>
+            )}
           </div>
 
           {authors && (
